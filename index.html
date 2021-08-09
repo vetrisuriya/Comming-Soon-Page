@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<title>Frontend Mentor | Base Apparel coming soon page</title>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+		:root {
+			--desaturated-red: hsl(0, 36%, 70%);
+			--soft-red: hsl(0, 93%, 68%);
+			--dark-grayish-red: hsl(0, 6%, 24%);
+			--gradient_1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+			--gradient_2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+		}
+
+		body {
+			margin: 0px;
+			padding: 0px;
+			font-family: 'Josefin Sans', sans-serif;
+			font-size: 16px;
+		}
+		main {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			flex-direction: row;
+		}
+		.left-panel {
+			width: 65%;
+			height: 100%;
+			background: url(./images/bg-pattern-desktop.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		.left-panel .left-panel-wrapper {
+			width: 70%;
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.left-panel .left-panel-wrapper .left-panel-logo {
+			align-self: flex-start;
+    		height: 15%;
+		}
+		.left-panel .left-panel-wrapper .left-panel-title {
+			align-self: flex-start;
+    		height: 40%;
+		}
+		.left-panel .left-panel-wrapper .left-panel-title h1 {
+			font-size: 70px;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 20px;
+			color: var(--dark-grayish-red);
+		}
+		.left-panel .left-panel-wrapper .left-panel-title h1 span {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.left-panel .left-panel-wrapper .left-panel-title h1 span:first-child {
+			color: var(--desaturated-red);
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+		.left-panel .left-panel-wrapper .left-panel-text {
+			align-self: flex-start;
+    		height: 20%;
+		}
+		.left-panel .left-panel-wrapper .left-panel-text p {
+			color: var(--desaturated-red);
+			line-height: 35PX;
+			width: 50%;
+			display: inline-block;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form {
+			align-self: flex-start;
+			height: 25%;
+			display: flex;
+			flex-direction: row;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-input {
+			position: relative;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-input input {
+			display: block;
+			margin-bottom: 10px;
+			width: 270px;
+   		 	padding: 10px 80px 10px 25px;
+			box-sizing: content-box;
+			border: 2px solid var(--lt-color-gray-200);
+			outline: none;
+			border-radius: 25px;
+			position: relative;
+		}
+		input::placeholder {
+			color: var(--desaturated-red);
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-input span {
+			color: var(--soft-red);
+			font-size: 14PX;
+			margin-left: 25px;
+			display: none;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-input div {
+			width: 20px;
+			height: 20px;
+			background: var(--soft-red);
+			display: inline-block;
+			position: absolute;
+			z-index: 1;
+			top: 10px;
+			right: 55px;
+			border-radius: 50%;
+			text-align: center;
+			display: none;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-input div img {
+			width: 18px;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-button {
+			position: relative;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-button button {
+			background: var(--gradient_2);
+			width: 70px;
+			padding: 12px 10px;
+			border: 0px;
+			outline: none;
+			border-radius: 25px;
+			cursor: pointer;
+			text-align: center;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			left: -45px;
+			box-shadow: 2px 2px 9px 0px hsl(0deg 36% 70%);
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-button button img {
+			width: 10px;
+		}
+		.left-panel .left-panel-wrapper .left-panel-form .left-panel-button button:hover {
+			background: #f8cecf;
+		}
+		.right-panel {
+			width: 35%;
+			height: 100%;
+			background: url(./images/hero-desktop.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		.left-panel-img {
+			width: 35%;
+			height: 100%;
+			background: url(./images/hero-mobile.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			display: none;
+		}
+
+
+		@media (max-width: 1440px) {
+			.right-panel {
+				display: none;
+			}
+		}
+		@media (max-width: 375px) {
+			main {
+				height: auto;
+			}
+			.left-panel {
+				width: 100%;
+    			background: var(--gradient_1);
+			}
+			.left-panel .left-panel-wrapper {
+				width: 100%;
+			}
+			.left-panel .left-panel-wrapper .left-panel-logo {
+				width: 100%;
+				height: 85px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			.left-panel .left-panel-wrapper .left-panel-logo img {
+				margin-left: 35px;
+			}
+			.left-panel .left-panel-wrapper .left-panel-img {
+				display: block;
+				width: 100%;
+    			height: 240px;
+			}
+			.left-panel .left-panel-wrapper .left-panel-title {
+				width: 100%;
+			}
+			.left-panel .left-panel-wrapper .left-panel-title h1 {
+				font-size: 40px;
+				font-weight: 700;
+				text-align: center;
+				margin: 50px 0px 15px;
+				letter-spacing: 15px;
+			}
+			.left-panel .left-panel-wrapper .left-panel-text {
+				width: 100%;
+			}
+			.left-panel .left-panel-wrapper .left-panel-text p {
+				width: 100%;
+				text-align: center;
+				line-height: 27px;
+			}
+			.left-panel .left-panel-wrapper .left-panel-form {
+				width: 100%;
+				margin: 30px 0px 70px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			.left-panel .left-panel-wrapper .left-panel-form .left-panel-input input {
+				width: 180px;
+				margin-left: -20px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<div class="left-panel">
+			<div class="left-panel-wrapper">
+				<div class="left-panel-logo">
+					<img src="./images/logo.svg" alt="">
+				</div>
+				<div class="left-panel-img"></div>
+				<div class="left-panel-title">
+					<h1><span>We're</span><span>coming</span><span>soon</span></h1>
+				</div>
+				<div class="left-panel-text">
+					<p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+				</div>
+				<div class="left-panel-form">
+					<div class="left-panel-input">
+						<input type="email" id="emailAddr" placeholder="Email Address">
+						<span id="error_msg">Please provide a valid email</span>
+						<div id="error_icon"><img src="./images/icon-error.svg" alt=""></div>
+					</div>
+					<div class="left-panel-button">
+						<button id="formButton">
+							<img src="./images/icon-arrow.svg" style="width: 10px;">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right-panel"></div>
+	</main>
+
+
+	<script>
+		var butt = document.getElementById("formButton");
+		var error_msg = document.getElementById("error_msg");
+		var error_icon = document.getElementById("error_icon");
+
+		butt.addEventListener("click", function(evt) {
+			var inputText = document.getElementById("emailAddr").value;
+
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(inputText.match(mailformat)) {
+				error_msg.style.display = "none";
+				error_icon.style.display = "none";
+			}
+			else {
+				error_msg.style.display = "block";
+				error_icon.style.display = "block";
+			}
+
+		})
+	</script>
+</body>
+</html>
